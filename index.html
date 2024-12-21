@@ -34,7 +34,7 @@
             <canvas id="moodChart" width="400" height="200"></canvas>
         </div>
     </div>
-    <section class="chat-window">
+    <!-- <section class="chat-window">
         <button class="close">x close</button>
         <div class="chat">
             <div class="model">
@@ -48,10 +48,22 @@
                 <img src="send-icon.png" alt="send">
             </button>
         </div>
-    </section>
+    </section> -->
 
     <div class="chat-button">
-        <img src="chat-icon.png" alt="start chat">
+        <img src="chat-icon.png" alt="Chat Icon">
+    </div>
+    <div class="chat-window">
+        <button class="close">X</button>
+        <div class="chat">
+            <div class="model">
+                <p>How are U feeling today, whats ur Mood?</p>
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" placeholder="Type a message...">
+            <button><img src="send-icon.png" alt="Send"></button>
+        </div>
     </div>
 
     <script type="importmap">
@@ -63,6 +75,21 @@
     </script>
     
     <script type="module" src="main.js"></script>
+    <script>
+        const chatButton = document.querySelector('.chat-button');
+const chatWindow = document.querySelector('.chat-window');
+const closeButton = document.querySelector('.chat-window .close');
+
+chatButton.addEventListener('click', () => {
+    chatWindow.classList.add('chat-open');  // Show the chat window
+    chatButton.style.display = 'none';  // Hide the chat button
+});
+
+closeButton.addEventListener('click', () => {
+    chatWindow.classList.remove('chat-open');  // Hide the chat window
+    chatButton.style.display = 'flex';  // Show the chat button again
+});
+    </script>
     <script type="module" src="page.js"></script>
 </body>
 </html>

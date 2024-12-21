@@ -155,11 +155,13 @@ document.querySelector(".chat-window .input-area button")
 
 document.querySelector(".chat-button")
 .addEventListener("click", ()=>{
+    document.querySelector("body").querySelector('.chat-button').style.display = 'none';
     document.querySelector("body").classList.add("chat-open");
 });
 
 document.querySelector(".chat-window button.close")
 .addEventListener("click", ()=>{
     document.querySelector("body").classList.remove("chat-open");
+    document.querySelector("body").querySelector(".chat-window button.close").style.display = 'flex';
 });
 
